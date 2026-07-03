@@ -1,6 +1,6 @@
 {
     "id": "5F1512A7",
-    "path": "~/GitHub/Nathxleixo.github.io/index.html",
+    "path": "~/GitHub/Nathxleixo.github.io/Nathxleixo.github.io/index.html",
     "project_path": "index.html",
     "type": "html",
     "hash": "0",
@@ -11,14 +11,16 @@
     "relative_order": 2,
     "properties": {
         "source_window_id": "",
-        "Source": "Source"
+        "Source": "Source",
+        "cursorPosition": "0,0",
+        "scrollLine": "0"
     },
     "folds": "",
-    "lastKnownWriteTime": 1783118334,
+    "lastKnownWriteTime": 1783121859,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1783118334,
+    "last_content_update": 1783121859,
     "read_only": false,
     "read_only_alternatives": []
 }
