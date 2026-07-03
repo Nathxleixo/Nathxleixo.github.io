@@ -1,7 +1,5 @@
-archive
-node_modules
-.idea
+*.gem
+.bundle
 .sass-cache
-.git
-.DS_Store
-Blog.xcworkspace
+_site
+Gemfile.lock
