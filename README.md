@@ -1,70 +1,53 @@
-# [Lone Wolf Theme Jekyll][1]
+# WhatATheme
+**WhatATheme** is a customizable Jekyll Portfolio theme which supports blogging. You can use this theme in order to create an elegant, fully responsive portfolio.
 
-[![LICENSE](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://github.com/manid2/lone-wolf-theme/blob/master/LICENSE)
-[![Jekyll](https://img.shields.io/badge/jekyll-%3E%3D%203.8-blue.svg)][jekyll]
-[![Ruby gem](https://badge.fury.io/rb/lone-wolf-theme.svg)](https://rubygems.org/gems/lone-wolf-theme/)
-[![Build Status](https://travis-ci.com/manid2/lone-wolf-theme.svg?branch=master)](https://travis-ci.com/manid2/lone-wolf-theme)
+#### You can checkout the [**Demo Here**](https://thedevslot.github.io/WhatATheme/) :boom:
 
-A simple [bootstrap][bs4] based jekyll theme.
+![WhatATheme](assets/images/meta.jpg)
 
-It uses
+# Features :sparkles:
+* Free and Easy setup
+* No Coding Required
+* Compatible with [Github Pages](https://pages.github.com/)
+* Responsive and Blogging Ready
+* HTML Compressor using [Jekyll Compress HTML](https://jch.penibelst.de/)
+* Minified CSS using SaSS
+* CMS Admin Support using [Jekyll Admin](https://jekyll.github.io/jekyll-admin/)
+* Supports Latest [Jekyll 4.x](https://jekyllrb.com/) and [Bundler](https://bundler.io/)
+* Stylesheet built using SaSS
+* Comments using Disqus
+* Analytics using Google Analytics
+* Instant Search using [Simple Jekyll Search](https://github.com/christian-fei/Simple-Jekyll-Search/)
 
-- [github-pages compatible gems][gh-gems]
-- [bootswatch wrappers][bootswatch]
-- [animate.css][ani-css].
+# Installation :books:
+### System Requirements
+* [Ruby](https://www.ruby-lang.org/en/)
+* [Jekyll](https://jekyllrb.com/)
+> You can read **What is Jekyll** [**here**](https://thedevslot.github.io/WhatATheme/blog/what-is-jekyll-how-to-use-it)
+### Up and Running
+* Fork the [Repository](https://github.com/thedevslot/WhatATheme/)
+* Clone or download the repository into directory of your choice: `git clone https://github.com/thedevslot/WhatATheme.git`
+* Inside the directory run `bundle install`
+* Host WhatATheme locally by running `bundle exec jekyll s`
 
-## Who uses it
+> You can read **How to Install and use WhatATheme?** [**here**](https://thedevslot.github.io/WhatATheme/blog/how-to-install-whatatheme)
 
-- [Lone wolf theme docs][1]
+[<img src="https://i.imgur.com/TVI946Z.png" width="250" />](https://youtu.be/VfPa2c9kwhQ)
 
-## Screenshots
+---
 
-![Lone wolf theme screenshot][lwt_ss_all_img]
+### Content Credits :green_heart:
+* [Hero Image](https://images.pexels.com/photos/220444/pexels-photo-220444.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940) used as a background image in the very first section of Homepage.
+* [Author Image](https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png) used in the Author Section.
+* [Font Awesome](https://fontawesome.com/)
+* [Poppins Font](https://fonts.google.com/specimen/Poppins)
+* [Memphis Pattern](https://www.freepik.com/free-vector/memphis-pattern-background_4034913.htm#page=1&query=memphis%20pattern&position=23) used for some Social Media Images and the Favicon.
 
-<!-- Images -->
-[lwt_ss_all_img]: lwt_screenshots/lwt_ss_all_in_one.png "Lone wolf theme screenshot"
+---
 
-## Installation
+### Credits :bulb:
+* [Sneha Omer](http://sassyecoder.github.io/)
+* [Harsh Trivedi](http://harsh98trivedi.github.io/)
 
-### Using remote theme
-
-Easiest way to use the theme if you dont want to make changes to the theme's
-code.
-
-- Add `remote_theme    : "manid2/lone-wolf-theme"` to your `_config.yml` file.
-
-### By forking the theme repository
-
-If you want to make changes to the code and to truly own the site.
-Follow the blog on [smashing magazine][sm-gh-pages] to learn about this method.
-
-### As a ruby gem
-
-When you want to host the site on any server other than the github pages
-and also to make use of plenty of jekyll plugins.
-
-- Add `gem "lone-wolf-theme"` to your `Gemfile`.
-- Update bundled gems by using `bundle` command.
-- Add `theme    : "lone-wolf-theme"` to your `_config.yml`.
-
-## Contribution
-
-Use the link to learn how to [contribute][3] to LWT.
-
-## Sponsor
-
-If you like this theme and want to support its development please consider
-sponsoring.
-
-<a href="https://buymeacoffee.com/manid2" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-yellow.png" alt="Buy Me A Coffee" height="42" width="174"></a>
-
-<!-- Links in the post -->
-[jekyll]: https://jekyllrb.com/
-[bs4]: https://getbootstrap.com/
-[bootswatch]: https://bootswatch.com/
-[gh-gems]: https://pages.github.com/versions/
-[ani-css]: https://daneden.github.io/animate.css/
-[sm-gh-pages]: https://www.smashingmagazine.com/2014/08/build-blog-jekyll-github-pages/
-
-[1]: https://manid2.github.io/lone-wolf-theme/
-[3]: https://manid2.github.io/lone-wolf-theme/contribute/
+### License
+The contents of this repository are licensed under the [**GNU General Public License v2.0**](https://github.com/thedevslot/WhatATheme/blob/master/LICENSE)

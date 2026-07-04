@@ -1,58 +1,57 @@
-{% assign owner = site.data.nav.footer[0] %}
-{% assign social = site.data.nav.footer[1] %}
-{% assign feed = site.data.nav.footer[2] %}
+<footer id="footer">
+    <!--Footer Button-->
+    <div class="container has-text-centered has-background-grey-darker" id="backtotop">
+        <a class="has-text-white" onclick="window.scroll(0,0)">BACK TO TOP</a>
+    </div>
+    <!--Footer Main Section-->
+    <div class="has-background-grey-darker">
+        <div class="container columns">
+            <!--Name Section-->
+            <div class="column has-text-left-desktop has-text-centered-mobile">
+                <a href="{{site.url}}{{site.baseurl}}/#about">
+                    <div class="columns">
+                        <div class="column is-one-fifth-desktop is-one-fifth-fullhd is-one-quarter-tablet">
+                            <figure class="image is-64x64">
+                                <img class="is-rounded" src="{{site.author-image}}">
+                            </figure>
+                        </div>
+                        <div class="column is-marginless">
+                            <h5 class="has-text-grey-lighter">{{site.author-name}}</h5>
+                            <div class="content has-text-grey">
+                                <p>{{site.author-about | truncate: 75 }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
 
-<footer class="page-footer">
-    <div class="page-footer-owner">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4 pb-3 text-center">
-                    <!-- owner info -->
-                    <p class="m-0">
-                        Owned by
-                        {% if owner.url %}
-                        <a href="{{ owner.url }}" {% if owner.description %} title="{{ owner.description }}"
-                            {% endif %}>{{ owner.owner }}</a>
-                        {% else %}
-                            <strong>{{ owner.owner }}</strong>
-                        {% endif %}
-                    </p>
-                    <p class="m-0 font-italic">{{ owner.bio }}</p>
-                    <p class="m-0"><i class="fas fa-map-marker-alt"></i><span class="pl-1">{{ owner.address }}</span>
-                    </p>
-                </div>
-                <div class="col-md-8 text-center">
-                    <!-- Social media links -->
-                    <ul class="list-inline">
-                        <li class="list-inline-item">Social: </li>
-                        {% for so_link in social.social %}
-                        <li class="list-inline-item">
-                            {% if so_link.url %}
-                            <a href="{{ so_link.url }}"><i class="{{ so_link.icon }}"></i>{{ so_link.label }}</a>
-                            {% else %}
-                            <strong>{{ so_link.label }}</strong>
-                            {% endif %}
-                        </li>
-                        {% endfor %}
-                    </ul>
-                    <!-- website feed links -->
-                    <ul class="list-inline">
-                        <li class="list-inline-item">Feed: </li>
-                        {% for fd_link in feed.feed %}
-                        <li class="list-inline-item">
-                            <a href="{{ fd_link.url | relative_url }}"><i class="{{ fd_link.icon }}"></i>{{ fd_link.label }}</a>
-                        </li>
-                        {% endfor %}
-                    </ul>
-                </div>
+            <!--Link Section-->
+            <div class="column has-text-white">
+                <h3>More Links</h3>
+                {% for sitepage in site.html_pages offset: 4 %}
+                {% unless sitepage.url == '/'  limit: 2 %}
+                <li>
+                    <a href="{{sitepage.url | absolute_url}}">{{sitepage.title}}</a>
+                </li>
+                {% endunless %}
+                {% endfor %}
+                <li>
+                    <a target="_blank" href="{{site.url}}{{site.baseurl}}/feed.xml">Subscribe via RSS</a>
+                </li>
+            </div>
+
+            <!--Blog-post Section-->
+            <div class="column has-text-white">
+                <h3>Recent Posts</h3>
+                {% for post in site.posts offset: 0 limit:3 %}
+                <li>
+                    <a href="{{post.url | absolute_url}}">{{post.title}}</a>
+                </li>
+                {% endfor %}
             </div>
         </div>
     </div>
-    <div class="page-footer-copyright">
-        <div class="container text-center">
-            <!-- copyright info -->
-            <p>Copyright &copy; {{ owner.owner }}, {{ "now" | date: "%Y" }}. Website theme <a href="https://github.com/manid2/lone-wolf-theme/">LWT</a> for <a href="https://jekyllrb.com/">Jekyll.</a>
-            </p>
-        </div>
+    <div class="has-background-black has-text-centered has-text-white" id="credits">
+        <i class="far fa-copyright"></i> {{ "now" | date: "%Y" }} | <a href="https://github.com/thedevslot/WhatATheme" target="_blank" rel="noopener noreferrer">WhatATheme</a> - A Theme made with <i class="fas fa-heart has-text-danger"></i> by <a href="https://www.twitter.com/thedevslot" target="_blank" rel="noopener noreferrer">TheDevsLot</a> Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a>
     </div>
 </footer>

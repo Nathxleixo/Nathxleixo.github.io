@@ -1,102 +1,85 @@
 ---
-layout: default
+layout: compress
 ---
 
-{% if page.image %}
-  {% capture page_image %}
-    {{ page.image | relative_url | default: '' }}
-  {% endcapture %}
+<!DOCTYPE html>
+<html>
 
-  {% capture page_image_alt %}
-    {{ page.image_alt | default: 'page image default alt' }}
-  {% endcapture %}
+<head>
+  {% include head.html %}
+</head>
 
-  {% capture page_image_caption %}
-    {{ page.image_caption | default: '' }}
-  {% endcapture %}
-{% endif %}
+<body>
+  {% include navbar.html %}
 
-{% assign blog_author = site.data.blog.authors[0] %}
-{% capture bl_au_avatar %}
-{{ '/assets/images/' | relative_url | append: blog_author.avatar }}
-{% endcapture %}
-
-{% capture bl_au_av_alt %}
-{{ blog_author.name }} avatar.
-{% endcapture %}
-
-<section class="container mt-3 blog-post">
-  <div class="row">
-    <div class="col-md-8 pb-3">
-      {% if page.show_hero and page_image %}
-      <!-- post hero -->
-      <figure class="figure">
-        <img class="img-fluid shadow-sm rounded mb-2 blog-post-hero-img" src="{{ page_image | strip }}"
-          alt="{{ page_image_alt | strip }}">
-        <figcaption class="figure-caption text-center">{{ page_image_caption | strip }}</figcaption>
-      </figure>
-      {% endif %}
-      <!-- post title -->
-      <h1>{{ page.title }}</h1>
-      <p class="font-italic text-muted">{{ page.date | date: "%b %-d, %Y" }}</p>
-      {% if page.show_author %}
-      <!-- post author, share -->
-      <div class="row align-items-center py-2 border-top border-bottom blog-post-author">
-        <div class="col-auto pr-0 pb-1">
-          <img src="{{ bl_au_avatar | strip }}" alt="{{ bl_au_av_alt | strip }}"
-            class="rounded-circle shadow-sm blog-post-author-avatar ">
-        </div>
-        <div class="col pr-0 pb-1">
-          <p class="blog-post-author-name p-0 m-0">{{ blog_author.name }}</p>
-          <p class="blog-post-author-headline p-0 m-0">{{ blog_author.headline }}</p>
-        </div>
-        <div class="col-auto justify-content-end blog-post-author-follow">
-          <div class="dropdown">
-            <button class="btn btn-outline-info dropdown-toggle" type="button" id="followMenuButton"
-              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Follow</button>
-            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="followMenuButton">
-              {% for follow in blog_author.follow %}
-              <a class="dropdown-item pb-2 text-info" href="{{ follow.url }}"><i
-                  class="{{ follow.icon }}"></i>{{ follow.label }}</a>
+  <section class="hero is-fullheight has-text-centered" id="post">
+    <div class="hero-body">
+      <div class="container">
+        <a href="{{page.url | relative_url}}" class="has-text-black" id="title">
+          <h1 class="title has-text-centered is-2 has-text-weight-semibold ">{{page.title}}</h1>
+        </a>
+        <hr class="has-background-black">
+        <div class="columns is-variable is-5">
+          <div class="column is-6">
+            <figure class="image is-16by9 has-shadow">
+              <img src="{{page.post-image}}" alt="{{post.title}}" id="post-image">
+            </figure>
+          </div>
+          <div class="subtitle column is-5 has-text-left-desktop has-text-left-fullhd has-text-left-tablet has-text-center-mobile">
+            {% unless page.description.size == 0 %}
+            <p id="description" class="content is-small has-text-weight-medium is-uppercase">{{page.description | strip | strip_html | strip_newlines }}</p>
+            {% endunless %}
+            <p class="subtitle is-6 is-uppercase has-text-weight-normal has-text-black-ter">Published on
+              <b>{{ page.date | date: "%-B %d, %Y" }}</b> by <a href="{% if site.author-url %}{{site.author-url}}{% else %}{{site.url}}{{site.baseurl}}/#about{% endif %}" target="_blank"><b class="has-text-link"><u>{{site.author-name}}</u></b>
+              </a>
+            </p>
+            {%- assign tags = page.tags -%}
+            {%- unless tags.size == 0 -%}
+            <p class="subtitle is-uppercase">
+              <i class="fas fa-tags"></i>
+              {% assign i = 0 %}
+              {% for tags in page.tags %}
+              <span class="tag is-link">{{page.tags[i]}}</span>
+              {% assign i = i | plus:1 %}
               {% endfor %}
-            </div>
+            </p>
+            {%- endunless -%}
+            {% assign words = content | number_of_words %}
+            {%- unless content.size == 0 -%}
+            <p class="subtitle is-uppercase"><i class="fas fa-clock"></i> <b class="has-text-link">
+                {{ words | divided_by:180 }} min
+              </b>READ</p>
+            {%- endunless -%}
           </div>
         </div>
-      </div>
-      {% endif %}
-      {% if page.show_toc %}
-      <!-- post TOC -->
-      <nav class="border mt-3 d-inline-block rounded">
-        <div class="p-1 bg-info text-white">
-          <i class="fas fa-list"></i>
-          <span class="pl-1">Contents</span>
+        <div class="content has-text-justified-desktop has-text-justified-fullhd has-text-justified has-text-justified-tablet has-text-left-mobile">
+          <p>{{ content }}</p>
         </div>
-        <div class="blog-post-toc m-1">
-          {% include toc.html html=content %}
-        </div>
-      </nav>
-      {% endif %}
-      <!-- Post content -->
-      <article class="mt-3 blog-post-article">
-        {{ content }}
-      </article>
-      {% if page.share %}
-      <div class="blog-post-social-share">
-        {% include social-share.html %}
+        {% unless site.disqus-shortname == "" %}
+        <div class="disqus-comments" id="disqus_thread"></div>
+        {% endunless %}
       </div>
-      {% endif %}
     </div>
-    <!-- blog post sidebar -->
-    <div class="col-md-4 blog-post-sidebar">
-      {% include blog-post-sidebar.html %}
-    </div>
-  </div>
-  <div class="row mt-3">
-    <div class="col-md-8">
-      {% if page.show_comments %}
-      <!-- Post comments -->
-        {%- include comments.html -%}
-      {% endif %}
-    </div>
-  </div>
-</section>
+  </section>
+  {% include footer.html %}
+</body>
+<script>
+  /**
+   *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+   *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+  /*
+  var disqus_config = function () {
+  this.page.url = PAGE_URL;  Replace PAGE_URL with your page's canonical URL variable
+  this.page.identifier = PAGE_IDENTIFIER; Replace PAGE_IDENTIFIER with your page's unique identifier variable
+  };
+  */
+  (function () { /* DON'T EDIT BELOW THIS LINE */
+    var d = document,
+      s = d.createElement('script');
+    s.src = 'https://{{site.disqus-shortname}}.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+
+</html>
