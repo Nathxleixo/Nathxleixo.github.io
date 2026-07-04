@@ -9,7 +9,7 @@ baseurl:
 # Title of the Site
 title: Página github
 # Description of the Site
-description: A customizable Jekyll portfolio theme
+description: Trabalho página GitHub
 # URL of Image of the Site
 site-image: /WhatATheme/assets/images/meta.jpg
 # Keywords of the Site
@@ -24,7 +24,7 @@ heroimage: https://images.pexels.com/photos/220444/pexels-photo-220444.jpeg?auto
 # If you don't want to use any icon, you can leave them blank.
 email: nathalyaleixo@gmail.com
 facebook_username: /
-twitter_username: /
+twitter_username: 
 instagram_username: _nathxleixo
 linkedin_username: /
 github_username: Nathxleixo
@@ -43,7 +43,7 @@ disqus-shortname: thedevslot
 # Name of the Author
 author-name: Nathaly Aleixo
 # URL for the Image of the Author
-author-image: https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png
+author-image: /assets/images/nathaly-foto.jpg
 # 60 Words About the Author
 author-about: Olá, me chamo Nathaly Aleixo, tenho 18 anos e sou uma estudante de Ciência de Dados na Universidade Federal de Viçosa.
 # URL to the Author's Profile (i.e., Github, Twitter, Stackoverflow, etc)
