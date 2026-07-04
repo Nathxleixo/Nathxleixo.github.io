@@ -1,189 +1,70 @@
-# Hamilton <!-- omit in toc -->
+# [Lone Wolf Theme Jekyll][1]
 
-A minimal and beautiful Jekyll theme best for writing and note-taking.
+[![LICENSE](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://github.com/manid2/lone-wolf-theme/blob/master/LICENSE)
+[![Jekyll](https://img.shields.io/badge/jekyll-%3E%3D%203.8-blue.svg)][jekyll]
+[![Ruby gem](https://badge.fury.io/rb/lone-wolf-theme.svg)](https://rubygems.org/gems/lone-wolf-theme/)
+[![Build Status](https://travis-ci.com/manid2/lone-wolf-theme.svg?branch=master)](https://travis-ci.com/manid2/lone-wolf-theme)
 
-The original purpose of this theme is to be a replacement of the default Jekyll theme -- [Minima](https://github.com/jekyll/minima). Hamilton is an enhancement of Minima but still, keep in minimal.
+A simple [bootstrap][bs4] based jekyll theme.
 
-Please check out the [demo](https://ngzhio.github.io/jekyll-theme-hamilton/).
+It uses
 
-| Skins | Displays |
-| ----- | -------- |
-| Daylight | ![screenshot](screenshot.png) |
-| Sunrise/Sunset | ![screenshot](screenshot-sunrise.png) |
-| Midnight | ![screenshot](screenshot-midnight.png) |
+- [github-pages compatible gems][gh-gems]
+- [bootswatch wrappers][bootswatch]
+- [animate.css][ani-css].
 
-## Features <!-- omit in toc -->
+## Who uses it
 
-- [Jekyll SEO Tag](https://github.com/jekyll/jekyll-seo-tag)
-- [Jekyll Feed](https://github.com/jekyll/jekyll-feed)
-- [Jekyll Sitemap](https://github.com/jekyll/jekyll-sitemap)
-- [Google Analytics](https://analytics.google.com/)
-- [MathJax](https://www.mathjax.org/)
-- [Disqus](https://disqus.com/)
-- [Font Awesome](https://fontawesome.com/)
-- TOC
-- Customizable head
-- Configurable page navigation
-- Customizable styles and skins
-- Archive pages implemented in pure Liquid
+- [Lone wolf theme docs][1]
 
-## Table of Contents <!-- omit in toc -->
+## Screenshots
 
-- [Installation](#installation)
-- [Configuration](#configuration)
-  - [Optional Parameters](#optional-parameters)
-- [Archive Pages](#archive-pages)
-- [MathJax](#mathjax)
-- [TOC](#toc)
-- [Customization](#customization)
-  - [Metadata](#metadata)
-  - [Navigation](#navigation)
-  - [Social Media](#social-media)
-  - [Skins](#skins)
-  - [More Customized Styles](#more-customized-styles)
-- [License](#license)
+![Lone wolf theme screenshot][lwt_ss_all_img]
+
+<!-- Images -->
+[lwt_ss_all_img]: lwt_screenshots/lwt_ss_all_in_one.png "Lone wolf theme screenshot"
 
 ## Installation
 
-You can choose one of the following methods to install Hamilton:
+### Using remote theme
 
-- Directly specify the `jekyll-theme-hamilton` gem.
+Easiest way to use the theme if you dont want to make changes to the theme's
+code.
 
-    1. Add `gem 'jekyll-theme-hamilton'` into your `Gemfile`.
-    2. Add the below lines into your `_config.yml`.
+- Add `remote_theme    : "manid2/lone-wolf-theme"` to your `_config.yml` file.
 
-        ```yml
-        plugins:
-          - jekyll-theme-hamilton
-        ```
+### By forking the theme repository
 
-- If your site is hosted on GitHub Pages, you can use [`jekyll-remote-theme`](https://github.com/benbalter/jekyll-remote-theme) to import the master branch of Hamilton.
+If you want to make changes to the code and to truly own the site.
+Follow the blog on [smashing magazine][sm-gh-pages] to learn about this method.
 
-    1. Add `gem 'jekyll-remote-theme'` into your `Gemfile`.
-    2. Add the below lines into your `_config.yml`.
+### As a ruby gem
 
-        ```yml
-        plugins:
-          - jekyll-remote-theme
+When you want to host the site on any server other than the github pages
+and also to make use of plenty of jekyll plugins.
 
-        remote_theme: ngzhio/jekyll-theme-hamilton
-        ```
+- Add `gem "lone-wolf-theme"` to your `Gemfile`.
+- Update bundled gems by using `bundle` command.
+- Add `theme    : "lone-wolf-theme"` to your `_config.yml`.
 
-## Configuration
+## Contribution
 
-After installation, you can run `jekyll serve` to check out your site, but before that, *make sure* the below **required parameters** are configured in your `_config.yml`.
+Use the link to learn how to [contribute][3] to LWT.
 
-| Parameters | Types | Specifications |
-|:---------- |:----- |:-------------- |
-| `title`    | string | The site title |
-| `disqus`   | string | The Disqus shortname; Unless you don't want to enable the comments system, you must specify this parameter. It is used in the production environment. |
-| `google_analytics` | string | The Google Analytics tracking ID; It is used in the production environment. |
+## Sponsor
 
-### Optional Parameters
+If you like this theme and want to support its development please consider
+sponsoring.
 
-| Parameters | Types | Specifications |
-|:---------- |:----- |:-------------- |
-| `author`   | string | The name of the author of the site; It would be showed in the copyright statement. |
-| `avatar`   | string | The avatar of the author of the site. |
-| `email`    | string | The email of the author of the site. |
-| `location` | string | The current living location of the author of the site. |
-| `skin`     | string | The skin name. See more information on the [Customization](#customization) section. |
-| `lang`     | string | The language of the site; The default value is `en`. |
-| `paginate` | int    | The number of posts on each page. |
-| `date_format` | string | The date format; The default value is `%b %-d, %Y`. |
-| `subscribe` | boolean | Show the subsribe feed button. |
+<a href="https://buymeacoffee.com/manid2" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-yellow.png" alt="Buy Me A Coffee" height="42" width="174"></a>
 
-## Archive Pages
+<!-- Links in the post -->
+[jekyll]: https://jekyllrb.com/
+[bs4]: https://getbootstrap.com/
+[bootswatch]: https://bootswatch.com/
+[gh-gems]: https://pages.github.com/versions/
+[ani-css]: https://daneden.github.io/animate.css/
+[sm-gh-pages]: https://www.smashingmagazine.com/2014/08/build-blog-jekyll-github-pages/
 
-Hamilton implements some archive templates in pure Liquid. For example, if you want to create a category archive page, set the below parameters on that page:
-
-```yml
----
-layout: archive-taxonomies
-type: categories
----
-```
-
-Or a tag archive page:
-
-```yml
-layout: archive-taxonomies
-type: tags
-```
-
-Or archive by years:
-
-```yml
-layout: archive-years
-```
-
-## MathJax
-
-You can enable MathJax on each post or page, just set `math: true` on that page.
-
-## TOC
-
-If you want to show the Table of Contents of a post or page on the left sidebar, just set `toc: true` on that page.
-
-## Customization
-
-### Metadata
-
-You can create a file `_includes/custom-head.html` in your repository, and add any metadata into that page, e.g. favicons.
-
-### Navigation
-
-You can create a file `_data/navigation.yml` to configure links to some pages. For example,
-
-```yml
-- title: About
-  url: /about/
-- title: Categories
-  url: /categories/
-- title: Tags
-  url: /tags/
-```
-
-The navigation bar also supports dropdown submenus:
-
-```yml
-- title: About
-  url: /about/
-- title: Categories
-  url: /categories/
-- title: Tags
-  url: /tags/
-- title: More
-  sublinks:
-    - title: FAQ
-      url: /faq/
-    - title: Docs
-      url: /docs/
-```
-
-### Social Media
-
-You can create a file `_data/social.yml` to configure links to your social media. For example,
-
-```yml
-- title: Twitter
-  url: https://twitter.com/ngzhio
-  icon: fab fa-twitter
-- title: GitHub
-  url: https://github.com/ngzhio/jekyll-theme-hamilton
-  icon: fab fa-github
-```
-
-### Skins
-
-You can select a skin by setting `skin` in `_config.yml`. The built-in skins include `daylight`, `midnight`, `sunrise`, and `sunset`. If you don't specify any skin, Hamilton would dynamically select one in these built-in skins according to different hours in a day.
-
-You can also customize a new skin, for example, a skin called `solarized`. You need to copy [`_sass/hamilton/skins/daylight.scss`](_sass/hamilton/skins/daylight.scss) into your repository and then rename it to `solarized.scss`, and adjust some colors in that file. Finally, specify `skin: solarized` in `_config.yml`.
-
-### More Customized Styles
-
-If you want to create more CSS styles in your site, creating a file `_sass/hamilton/custom-styles.scss`, and putting your code in there, Hamilton would automatically refer to them.
-
-## License
-
-The theme is available as open source under the terms of the [MIT License](LICENSE.txt).
+[1]: https://manid2.github.io/lone-wolf-theme/
+[3]: https://manid2.github.io/lone-wolf-theme/contribute/

@@ -1,32 +1,25 @@
+---
+#layout: compress # enable only if needed
+---
+
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+<html lang="{{ site.lang | slice: 0,2 | default: "en" }}">
 
-  <head>
-    {% include head.html %}
-  </head>
+{% include head.html %}
 
-  <body>
-    <div class="site-container">
-      <header class="site-header">
-        {% include header.html %}
-      </header>
-      
-      <div class="site-body wrapper">
-        <aside class="site-sidebar" id="site-sidebar">
-          {% if page.toc %}
-            {% include sidebar-toc.html %}
-          {% else %}
-            {% include sidebar.html %}
-          {% endif %}
-        </aside>
-        <main class="site-main" id="site-main" aria-label="Content" tabindex="1">
-          {{ content }}
-          <footer class="site-footer">
-            {% include footer.html %}
-          </footer>
-        </main>
-      </div>
-    </div>
-  </body>
+<body>
+  <!-- page container -->
+  <div class="page-container">
+    <!-- page header -->
+    {% include header.html %}
+    <!-- page content -->
+    <main class="page-content" role="main">
+      {{ content }}
+    </main>
+    <!-- page footer -->
+    {% include footer.html %}
+  </div>
+  {% include scripts.html %}
+</body>
 
 </html>
