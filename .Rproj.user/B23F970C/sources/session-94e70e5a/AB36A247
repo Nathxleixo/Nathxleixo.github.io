@@ -1,12 +1,12 @@
 {
-    "id": "97EDDD00",
+    "id": "AB36A247",
     "path": "~/GitHub/Nathxleixo.github.io/_config.yml",
     "project_path": "_config.yml",
     "type": "yaml",
     "hash": "0",
     "contents": "",
     "dirty": false,
-    "created": 1783125266104.0,
+    "created": 1783126105341.0,
     "source_on_save": false,
     "relative_order": 1,
     "properties": {
@@ -16,11 +16,11 @@
         "scrollLine": "0"
     },
     "folds": "",
-    "lastKnownWriteTime": 1783124460,
+    "lastKnownWriteTime": 1783125704,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1783124460,
+    "last_content_update": 1783125704,
     "read_only": false,
     "read_only_alternatives": []
 }
